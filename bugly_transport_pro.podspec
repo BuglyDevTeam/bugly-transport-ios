@@ -7,7 +7,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'bugly_transport_pro'
-    s.version          = '2.10'
+    s.version          = '2.11'
     s.summary          = 'bugly_transport'
     s.homepage         = 'https://github.com/BuglyDevTeam'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }

@@ -35,6 +35,8 @@ struct BuglyOption
     std::string                     appName;
     std::string                     appVersion;
     std::string                     appChannel;
+    std::string                     appBuildNumber;
+    std::string                     appVersionMode;
     
     std::string                     buglyVersion;
     std::string                     launchId;
