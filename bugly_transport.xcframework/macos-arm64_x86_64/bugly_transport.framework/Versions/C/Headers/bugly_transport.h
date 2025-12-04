@@ -57,6 +57,10 @@ public:
     /// @param _jank
     bool reportJankStack(const BuglyReportJankStackInfo& _jank);
 
+    /// @brief  网络质量上报
+    /// @param _network
+    bool reportNetworkQualityMetric(const BuglyReportNetQualityMetricInfo& _network);
+
     /// @brief 初始化配置
     /// @param config
     /// @return

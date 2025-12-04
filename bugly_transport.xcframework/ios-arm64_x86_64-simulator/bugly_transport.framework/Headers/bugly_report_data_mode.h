@@ -121,6 +121,60 @@ struct BuglyReportJankStackInfo : public BuglyReportInfoBase
     std::vector<stack>      stacks;
 };
 
+#pragma mark -- network
+struct BuglyReportNetQualityMetricInfo : public BuglyReportInfoBase
+{
+    uint64_t                launchDuration;
+    struct metric {
+        std::string         collectType;
+        std::string         trafficType;
+        std::string         peerName;
+        std::string         frontState;
+        std::string         netType;
+        uint64_t            send;
+        uint64_t            recv;
+        uint64_t            startTime;
+        uint64_t            endTime;
+    };
+
+    struct httpMetric : public metric {
+        uint64_t            requestTimeInMs;
+        std::string         protocol;
+        bool                isHttps;
+        std::string         host;
+        std::string         path;
+        std::string         queryString;
+        std::string         method;
+        std::string         stage;
+        bool                isReuseConnection;
+        int32_t             statusCode;
+        int32_t             resultCode;
+        uint64_t            totalCostInMs;
+        uint64_t            sendBytes;
+        uint64_t            recvBytes;
+        uint32_t            dnsCostInMs;
+        uint32_t            tcpCostInMs;
+        uint32_t            sslCostInMs;
+        uint32_t            requestCostInMs;
+        uint32_t            waitCostInMs;
+        uint32_t            responseCostInMs;
+        uint32_t            firstPackageCostInMs;
+        std::string         hostIP;
+        uint32_t            hostPort;
+        std::string         clientIP;
+        uint32_t            clientPort;
+        std::string         clientOperator;
+        std::string         clientRegionId;
+        std::string         exceptionType;
+        std::string         callStack;
+        std::unordered_map<std::string, std::string> userCustom;
+    };
+    
+
+    std::vector<metric>      metrics;
+    std::vector<httpMetric>  httpMetrics;
+};
+
 
 } //namespace
 
